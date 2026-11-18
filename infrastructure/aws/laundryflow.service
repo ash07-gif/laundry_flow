@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn daemon for LaundryFlow FastAPI application
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/opt/laundryflow/backend
+Environment="PATH=/opt/laundryflow/venv/bin"
+EnvironmentFile=/opt/laundryflow/.env
+ExecStart=/opt/laundryflow/venv/bin/gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker -b 127.0.0.1:8000
+
+[Install]
+WantedBy=multi-user.target

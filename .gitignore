@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.env
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+build/
+.npm/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
+
+# Project specific
+LaundryFlow.zip
+*.db
+test.db
